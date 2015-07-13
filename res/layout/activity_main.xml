@@ -1,46 +1,66 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffe1e0de" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     android:background="#ffe1e0de" >
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="扫描二维码" />
-    <Button
-            android:id="@+id/btnGen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button1"
-            android:layout_centerVertical="true"
-            android:text="生成二维码"/>
+        android:text="@string/scan" />
+
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/button1"
+        android:layout_below="@id/btnScan"
         android:gravity="center_horizontal"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
-    <ImageView
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:id="@+id/btnGen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/generate" />
+
+        <EditText
+            android:id="@+id/PASSWORD"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGen"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/SSID"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/PASSWORD"
+            android:layout_alignTop="@id/PASSWORD"
+            android:inputType="text" >
+        </EditText>
+        <ImageView
         android:id="@+id/qrcode_bitmap"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/result"/>
+         android:layout_below="@id/SSID"/>
+        android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="     上传     " />
+ 
 
-</RelativeLayout>
+</LinearLayout>

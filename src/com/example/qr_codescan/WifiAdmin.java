@@ -1,3 +1,4 @@
+package com.example.qr_codescan;
 
 import java.util.List;
 
